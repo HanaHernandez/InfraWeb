@@ -1,5 +1,4 @@
-
-  <ul class="productos list-group-horizontal">
+<ul class="productos list-group-horizontal">
     <li *ngFor="let p of products" class="list-group-item">     
             {{p.name}}
             {{p.price}}
@@ -7,20 +6,13 @@
       <button (click)="editProduct($event,p)" class="btn btn-secondary">Editar</button>
       <!--Formulario de editar-->  
           <div  *ngIf="editing && editingProduct.id == p.id">
-              <form (ngSubmit)="updateProduct(product)">
+              <form (ngSubmit)="updateProduct()">
                   <input type="text" name="name" [(ngModel)]="editingProduct.name">
                   <input type="number" name="price" [(ngModel)]="editingProduct.price">
                   <button type="submit">
                     Ok
                   </button>
                 </form>    
-          </div>
-        
+          </div>        
     </li>
   </ul> 
-
-
-
-
-
-
